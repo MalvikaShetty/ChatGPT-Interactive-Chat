@@ -1,0 +1,70 @@
+<br>
+<h2 class="text-center">Interactive Chat</h2>
+<br>
+
+<!-- Upload  -->
+<div *ngIf="!UploadedFile">
+  <form id="file-upload-form" class="uploader">
+  
+    <input id="file-upload" type="file" (change)="fileUpload($event)"
+    name="fileUpload" accept=".xls,.xlsx" />
+    <label for="file-upload" id="file-drag">
+      <img id="file-image" src="#" alt="Preview" class="hidden">
+      <div id="start">
+        <i class="fa fa-download" aria-hidden="true"></i>
+        <div>Select a file</div>
+        <div id="notimage" class="hidden">Please select an image</div>
+        <span id="file-upload-btn" class="btn btn-primary">Select a file</span>
+    </div>
+      <div id="response" class="hidden">
+        <div id="messages"></div>
+        <progress class="progress" id="file-progress" value="0">
+          <span>0</span>%
+        </progress>
+      </div>
+    </label>
+  </form>
+</div>
+
+
+<div *ngIf="UploadedFile">
+  <div>
+  <pre>
+    {{this.convertedExcelToJsonString}}
+  </pre>
+</div>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Ticker</th>
+        <th scope="col">Quantity</th>
+        <th scope="col">Current Price</th>
+        <th scope="col">Purchase Price</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- <tr *ngFor="let p of this.convertedJson">
+        <td>{{p.Ticker}}</td>
+        <td>{{p.Quantity}}</td>
+        <td>{{p.CurrentPrice}}</td>
+      
+      </tr> -->
+    </tbody>
+  </table>
+  <div class="row" style="margin-left: 40%;">
+    <div class="col-lg-4 col-lg-offset-4">
+      <div class="input-group mb-3">
+        <input type="text" class="form-control" placeholder="Enter question" [(ngModel)]="inputQuestion">
+        <div class="input-group-append">
+          <button class="btn btn-secondary" type="button" (click)="submitQuestion(inputQuestion)">Submit</button>
+        </div>
+      </div><!-- /input-group -->
+    </div><!-- /.col-lg-4 -->
+  </div><!-- /.row -->
+  <p style="margin-left: 30%;">{{answerIsBeingGenerated}}</p>
+<h3 style="margin-left: 30%;">Ans:<span><p>{{this.apis._returnedChatGPTResponse}}</p></span></h3>
+
+</div>
+
+ 
+
