@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\malvi\\Angular\\ChatGPTCoreWebAPI - Copy\\ChatGPTCoreWebAPI.csproj": {}
+    "C:\\Users\\malvi\\Angular\\StockAppChatGPT\\ChatGPTCoreWebAPI\\ChatGPTCoreWebAPI.csproj": {}
   },
   "projects": {
-    "C:\\Users\\malvi\\Angular\\ChatGPTCoreWebAPI - Copy\\ChatGPTCoreWebAPI.csproj": {
+    "C:\\Users\\malvi\\Angular\\StockAppChatGPT\\ChatGPTCoreWebAPI\\ChatGPTCoreWebAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\malvi\\Angular\\ChatGPTCoreWebAPI - Copy\\ChatGPTCoreWebAPI.csproj",
+        "projectUniqueName": "C:\\Users\\malvi\\Angular\\StockAppChatGPT\\ChatGPTCoreWebAPI\\ChatGPTCoreWebAPI.csproj",
         "projectName": "ChatGPTCoreWebAPI",
-        "projectPath": "C:\\Users\\malvi\\Angular\\ChatGPTCoreWebAPI - Copy\\ChatGPTCoreWebAPI.csproj",
+        "projectPath": "C:\\Users\\malvi\\Angular\\StockAppChatGPT\\ChatGPTCoreWebAPI\\ChatGPTCoreWebAPI.csproj",
         "packagesPath": "C:\\Users\\malvi\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\malvi\\Angular\\ChatGPTCoreWebAPI - Copy\\obj\\",
+        "outputPath": "C:\\Users\\malvi\\Angular\\StockAppChatGPT\\ChatGPTCoreWebAPI\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\malvi\\AppData\\Roaming\\NuGet\\NuGet.Config",

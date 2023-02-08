@@ -20,6 +20,7 @@ export class AppComponent{
   jsonArrayFromExcel!: any;
   headers: string[]=[];
   ifQuestionSubmitted=false;
+  questionAndResponse = [{question: '', response: ''}];
   //stringofJson: string="";
 
   fileUpload(event:any){
@@ -53,7 +54,8 @@ export class AppComponent{
     this.answerIsBeingGenerated= "Your answer is being generated...";
    // }
    this.apis.postFileJsonDetails(this.convertedExcelToJsonString, question);
-  //  if(this.apis._returnedChatGPTResponse!=null){
+   this.questionAndResponse.push({question: question, response: this.apis._returnedChatGPTResponse});
+   //  if(this.apis._returnedChatGPTResponse!=null){
   //   this.answerIsBeingGenerated="";
   //  }
    
