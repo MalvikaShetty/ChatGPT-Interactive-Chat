@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "ZFWkTgwYmXr76R/MFI3INkU5A0QZ3OqR6qxF/7HxSA15tc6yAU9RX2AipPd+Cz0YFUG31eoJZd+zTl+UqVDICw==",
+  "dgSpecHash": "ZbLt7qT/NENxxGe19/zX8U90WKbvjByVp3890DC+/ozATDm2YNKlqWIeoGe23b2/0hM6F869XkimiF3DbfrkxQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\malvi\\Angular\\StockAppChatGPT\\ChatGPTCoreWebAPI\\ChatGPTCoreWebAPI.csproj",
+  "projectFilePath": "C:\\Users\\malvi\\Angular\\ChatGPTCoreWebAPI - Copy\\ChatGPTCoreWebAPI.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\malvi\\.nuget\\packages\\azure.core\\1.24.0\\azure.core.1.24.0.nupkg.sha512",
     "C:\\Users\\malvi\\.nuget\\packages\\azure.identity\\1.6.0\\azure.identity.1.6.0.nupkg.sha512",

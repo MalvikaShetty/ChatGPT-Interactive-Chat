@@ -5749,11 +5749,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\malvi\\Angular\\StockAppChatGPT\\ChatGPTCoreWebAPI\\ChatGPTCoreWebAPI.csproj",
+      "projectUniqueName": "C:\\Users\\malvi\\Angular\\ChatGPTCoreWebAPI - Copy\\ChatGPTCoreWebAPI.csproj",
       "projectName": "ChatGPTCoreWebAPI",
-      "projectPath": "C:\\Users\\malvi\\Angular\\StockAppChatGPT\\ChatGPTCoreWebAPI\\ChatGPTCoreWebAPI.csproj",
+      "projectPath": "C:\\Users\\malvi\\Angular\\ChatGPTCoreWebAPI - Copy\\ChatGPTCoreWebAPI.csproj",
       "packagesPath": "C:\\Users\\malvi\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\malvi\\Angular\\StockAppChatGPT\\ChatGPTCoreWebAPI\\obj\\",
+      "outputPath": "C:\\Users\\malvi\\Angular\\ChatGPTCoreWebAPI - Copy\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\malvi\\AppData\\Roaming\\NuGet\\NuGet.Config",

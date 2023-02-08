@@ -9,8 +9,8 @@ export class ApisService {
 
   constructor(private http:HttpClient) { }
 
-  readonly base="https://localhost:7220/api/GPTStock"
-
+  readonly base="https://localhost:44372/api/GPTStock"
+  
   _returnedChatGPTResponse: string="";
   postFileJsonDetails(jsonFileData: any,question:any){
     const headers = new HttpHeaders({'Content-Type': 'application/json'});

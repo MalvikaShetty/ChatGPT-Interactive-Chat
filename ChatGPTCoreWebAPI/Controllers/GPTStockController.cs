@@ -42,17 +42,27 @@ namespace ChatGPTCoreWebAPI.Controllers
         [HttpPost("stocktable/{question}")]
         public async Task<dynamic> PostStockJsonDataAndReply([FromBody] JArray jsonStockDataArray, string question)
         {
-            string jsonToString;
+            string jsonToString="";
             string finalPrompt = "";
             if (jsonStockDataArray is null)
             {
                 return "Array is null";
             }
-          
+
+            //var toString =jsonStockDataArray.ToString();
+           // finalPrompt = toString.Replace('[', ' ').Replace(']', ' ').Replace('{', ' ').Replace('}', ' ');
+
+
             foreach (var value in jsonStockDataArray)
             {
-                jsonToString = "Ticker: " + value["Ticker"] + ", Quantity: " + value["Quantity"] + ", CurrentPrice: " + value["CurrentPrice"] + ", PurchasePrice: " + value["PurchasePrice"];
-                finalPrompt = jsonToString + finalPrompt;
+                dynamic obj = value;
+                foreach (var property in obj)
+                {
+                    jsonToString +=  property.Name + property.Value;
+                    //Console.WriteLine($"{property.Name}: {property.Value}");
+                }
+           
+                finalPrompt += jsonToString;
             }
             
             answer = await Prompts(finalPrompt + question);

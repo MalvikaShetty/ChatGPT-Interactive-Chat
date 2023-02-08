@@ -26,34 +26,22 @@
   </form>
 </div>
 
-
 <div *ngIf="UploadedFile">
-  <div>
-  <pre>
-    {{this.convertedExcelToJsonString}}
-  </pre>
-</div>
   <table class="table">
-    <thead>
-      <tr>
-        <th scope="col">Ticker</th>
-        <th scope="col">Quantity</th>
-        <th scope="col">Current Price</th>
-        <th scope="col">Purchase Price</th>
-      </tr>
-    </thead>
-    <tbody>
-      <!-- <tr *ngFor="let p of this.convertedJson">
-        <td>{{p.Ticker}}</td>
-        <td>{{p.Quantity}}</td>
-        <td>{{p.CurrentPrice}}</td>
-      
-      </tr> -->
-    </tbody>
+      <thead>
+        <tr>
+          <th scope="col" *ngFor="let header of headers">{{header}}</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let value of jsonArrayFromExcel">
+          <td *ngFor="let header of headers">{{value[header]}}</td>
+        </tr>
+      </tbody>
   </table>
-  <div class="row" style="margin-left: 40%;">
-    <div class="col-lg-4 col-lg-offset-4">
-      <div class="input-group mb-3">
+  <div class="row" style="margin-left: 30%;width:50%;height:25% ;">
+    <div>
+      <div class="input-group mb-6">
         <input type="text" class="form-control" placeholder="Enter question" [(ngModel)]="inputQuestion">
         <div class="input-group-append">
           <button class="btn btn-secondary" type="button" (click)="submitQuestion(inputQuestion)">Submit</button>
@@ -61,8 +49,12 @@
       </div><!-- /input-group -->
     </div><!-- /.col-lg-4 -->
   </div><!-- /.row -->
+  <div>
   <p style="margin-left: 30%;">{{answerIsBeingGenerated}}</p>
-<h3 style="margin-left: 30%;">Ans:<span><p>{{this.apis._returnedChatGPTResponse}}</p></span></h3>
+  </div>
+<h3 style="margin-left: 30%;">Ans:<span>
+  <p>{{this.apis._returnedChatGPTResponse}}</p>
+</span></h3>
 
 </div>
 

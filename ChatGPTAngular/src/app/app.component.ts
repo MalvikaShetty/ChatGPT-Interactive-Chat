@@ -17,7 +17,9 @@ export class AppComponent{
   inputQuestion = '';
   UploadedFile= false;
   answerIsBeingGenerated:string="";
-  //jsonArrayFromExcel: string="";
+  jsonArrayFromExcel!: any;
+  headers: string[]=[];
+  ifQuestionSubmitted=false;
   //stringofJson: string="";
 
   fileUpload(event:any){
@@ -35,17 +37,27 @@ export class AppComponent{
         this.convertedExcelToJsonString = JSON.stringify(data, undefined,4);
         //this.newStr =  this.convertedJson.substring(1, this.convertedJson.length-1);
        // this.stringofJson = this.convertedJson.replace(/{|}/g, " ").replace(/\[|\]/g, " ");
-      const jsonArrayFromExcel = JSON.parse(this.convertedExcelToJsonString);
-       alert("Ask your question now");
+       this.jsonArrayFromExcel = JSON.parse(this.convertedExcelToJsonString);
+       this.headers = Object.keys(this.jsonArrayFromExcel[0]);
+       //console.log( this.jsonArrayFromExcel);
       })
     }
   }
   
+  
+ 
 
   submitQuestion(question:string){
+    // this.ifQuestionSubmitted=true;
+    // if(this.ifQuestionSubmitted==true){
     this.answerIsBeingGenerated= "Your answer is being generated...";
-    this.apis.postFileJsonDetails(this.convertedExcelToJsonString, question);
-    
+   // }
+   this.apis.postFileJsonDetails(this.convertedExcelToJsonString, question);
+  //  if(this.apis._returnedChatGPTResponse!=null){
+  //   this.answerIsBeingGenerated="";
+  //  }
+   
+    //this.ifQuestionSubmitted=false;
   }
 
 }
