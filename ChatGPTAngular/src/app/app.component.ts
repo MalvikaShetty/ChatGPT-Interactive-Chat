@@ -21,6 +21,7 @@ export class AppComponent{
   headers: string[]=[];
   ifQuestionSubmitted=false;
   questionAndResponse = [{question: '', response: ''}];
+  previousQAnswered=false;
   //stringofJson: string="";
 
   fileUpload(event:any){
@@ -46,15 +47,31 @@ export class AppComponent{
   }
   
   
- 
+  async delay(ms: number) {
+    await new Promise<void>(resolve => setTimeout(()=>resolve(), ms)).then(()=>console.log("fired"));
+}
 
   submitQuestion(question:string){
+    if(this.previousQAnswered==true){
+      this.previousQAnswered=false;
+    }
     // this.ifQuestionSubmitted=true;
     // if(this.ifQuestionSubmitted==true){
-    this.answerIsBeingGenerated= "Your answer is being generated...";
+   this.answerIsBeingGenerated= "Your answer is being generated...";
    // }
    this.apis.postFileJsonDetails(this.convertedExcelToJsonString, question);
-   this.questionAndResponse.push({question: question, response: this.apis._returnedChatGPTResponse});
+   if( this.apis._returnedChatGPTResponse!= null){
+    this.delay(2000).then(any=>{
+      this.previousQAnswered=true;
+      this.questionAndResponse.push({question: "Q:"+question, response: ''});
+      
+ });
+  this.inputQuestion = '';
+  //  alert("wowow");
+
+  }
+  
+   
    //  if(this.apis._returnedChatGPTResponse!=null){
   //   this.answerIsBeingGenerated="";
   //  }

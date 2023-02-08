@@ -39,13 +39,14 @@
         </tr>
       </tbody>
   </table>
+  
   <div class="containerQA mt-sm-5 my-1">
-    <!-- <div *ngFor="let ques of questionAndResponse">
-      <div *ngIf="ques.response">
-        {{ques.question}}
-        {{ques.response}}
-      </div>
-      <div *ngIf="!ques.response"></div> -->
+    <!-- <div  *ngIf="previousQAnswered"> -->
+      <div *ngFor="let ques of questionAndResponse">
+        <h3>{{ques.question}}</h3>
+        <b>A:{{this.apis._returnedChatGPTResponse}}</b>  
+       </div>
+    <!-- </div> -->
         <div class="py-2 h5" style="display: flex;flex-direction:row;">
           <textarea type="text" style="padding:2%;" class="form-control" placeholder="Enter question" [(ngModel)]="inputQuestion">
          </textarea>
@@ -54,11 +55,11 @@
             <button class="btn btn-success" type="button" (click)="submitQuestion(inputQuestion)">Submit</button>
           </div>
         </div>
-        <div class="ml-md-3 ml-sm-3 pl-md-5 pt-sm-0 pt-3" id="options">
+        <!-- <div class="ml-md-3 ml-sm-3 pl-md-5 pt-sm-0 pt-3" id="options">
           <h3>Ans:<span>
             <b>{{this.apis._returnedChatGPTResponse}}</b>
           </span></h3>
-        </div>
+        </div> -->
     <div class="d-flex align-items-center pt-3">
  
     </div>
