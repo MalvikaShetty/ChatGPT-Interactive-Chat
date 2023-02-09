@@ -27,7 +27,11 @@
 </div>
 
 <div *ngIf="UploadedFile" class="container table-responsive py-5" style="margin:auto">
-  <table class="table table-bordered table-hover">
+ <button type="button" style="padding:5px;margin-bottom:5px;"  (click)="goBackAndChangeFile()" class="btn btn-secondary">
+  Upload another file
+  </button>
+ <br>
+ <table class="table table-bordered table-hover">
       <thead class="table-dark">
         <tr>
           <th scope="col" *ngFor="let header of headers">{{header}}</th>

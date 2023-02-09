@@ -71,13 +71,9 @@ export class AppComponent{
   //  alert("wowow");
 
   }
-  
-   
-   //  if(this.apis._returnedChatGPTResponse!=null){
-  //   this.answerIsBeingGenerated="";
-  //  }
-   
-    //this.ifQuestionSubmitted=false;
   }
 
+  goBackAndChangeFile(){
+    this.UploadedFile=false;
+  }
 }
