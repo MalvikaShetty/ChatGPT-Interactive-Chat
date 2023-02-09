@@ -61,9 +61,10 @@ export class AppComponent{
    // }
    this.apis.postFileJsonDetails(this.convertedExcelToJsonString, question);
    if( this.apis._returnedChatGPTResponse!= null){
-    this.delay(2000).then(any=>{
+    this.delay(3000).then(any=>{
       this.previousQAnswered=true;
-      this.questionAndResponse.push({question: "Q:"+question, response: ''});
+      //this.questionAndResponse. =  this.apis._returnedChatGPTResponse;
+      this.questionAndResponse.push({question: "Q:"+question, response:"A:"+ this.apis._returnedChatGPTResponse});
       
  });
   this.inputQuestion = '';
