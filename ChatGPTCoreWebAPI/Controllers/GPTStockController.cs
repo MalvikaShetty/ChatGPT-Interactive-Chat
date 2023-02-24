@@ -32,12 +32,89 @@ namespace ChatGPTCoreWebAPI.Controllers
         }
 
         string answer="";
-  
-     /*   [HttpGet("getans")]
-        public async Task<dynamic> GetStocksData()
+
+        /*   [HttpGet("getans")]
+           public async Task<dynamic> GetStocksData()
+           {
+               return answer;
+           }*/
+
+        [HttpGet("getmessages/{id}")]
+        public async Task<dynamic> GetMessagesByUserId(int id)
         {
-            return answer;
-        }*/
+            
+            return await _context.chatmessages.Include(p => p.Messages).Where(u => u.UserId == id).ToListAsync();
+           // return await _context.chatmessages.ToListAsync();
+        }
+
+        [HttpGet("getmessagesbychatId/{id}")]
+        public async Task<dynamic> GetMessagesByChatId(int id)
+        {
+            // return await _context.chatmessages.Include(p => p.Messages).Where(u => u.ChatMessageId == id).ToListAsync();
+            return await _context.chatmessages.Include(p => p.Messages).Where(u => u.ChatMessageId == id).ToListAsync();
+        }
+
+        [HttpPost("postmessage")]
+        public async Task<IActionResult> PostMessage([FromBody] ChatMessages chatMessages)
+        {
+            if (chatMessages == null)
+            {
+                return BadRequest();
+            }
+
+            // Create a new row for the parent table
+            ChatMessages newRow = new ChatMessages();
+
+            // Copy the values from the newParentTable object to the newRow object
+            newRow.UserId = chatMessages.UserId;
+            newRow.Messages = chatMessages.Messages;
+
+            // Create a new list of child table rows
+            List<Messages> childTableRows = new List<Messages>();
+
+            // Loop through each row in the child table of the newParentTable object
+            foreach (Messages childTableRow in chatMessages.Messages)
+            {
+                // Create a new row for the child table
+                Messages newChildTableRow = new Messages();
+
+                // Copy the values from the childTableRow object to the newChildTableRow object
+                newChildTableRow.UserId = childTableRow.UserId;
+                newChildTableRow.Question = childTableRow.Question;
+                newChildTableRow.Answer = childTableRow.Answer;
+               
+
+                // Add the new child table row to the list
+                childTableRows.Add(newChildTableRow);
+            }
+
+            // Set the child table rows for the new parent table row
+            newRow.Messages = childTableRows;
+
+            // Add the new row to the parent table
+            _context.chatmessages.Add(newRow);
+            await _context.SaveChangesAsync();
+
+            // Return a 201 Created response with the new row
+            return CreatedAtAction("GetMessagesByUserId", new { id = newRow.ChatMessageId }, newRow);
+
+          
+
+            /*using (var dbContext = new chatmessages())
+            {*/
+            /*  foreach (var item in chatMessages)
+              {
+                  _context.chatmessages.Add(item);
+              }
+              await _context.SaveChangesAsync();*/
+            /*}*/
+
+            //_context.chatmessages.Add(chatMessages);
+            //await _context.SaveChangesAsync();
+
+
+           // return CreatedAtAction("GetMessages", new { id = chatMessages.ChatMessageId }, chatMessages);
+        }
 
         [HttpPost("stocktable/{question}")]
         public async Task<dynamic> PostStockJsonDataAndReply([FromBody] JArray jsonStockDataArray, string question)
@@ -48,11 +125,7 @@ namespace ChatGPTCoreWebAPI.Controllers
             {
                 return "Array is null";
             }
-
-            //var toString =jsonStockDataArray.ToString();
-           // finalPrompt = toString.Replace('[', ' ').Replace(']', ' ').Replace('{', ' ').Replace('}', ' ');
-
-
+       
             foreach (var value in jsonStockDataArray)
             {
                 dynamic obj = value;
