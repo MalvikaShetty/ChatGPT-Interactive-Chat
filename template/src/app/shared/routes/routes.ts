@@ -5,22 +5,22 @@ export const content: Routes = [
     path: "dashboard",
     loadChildren: () => import("../../components/dashboard/dashboard.module").then((m) => m.DashboardModule),
   },
-  {
-    path: "widgets",
-    loadChildren: () => import("../../components/widgets/widgets.module").then((m) => m.WidgetsModule),
-  },
+  // {
+  //   path: "widgets",
+  //   loadChildren: () => import("../../components/widgets/widgets.module").then((m) => m.WidgetsModule),
+  // },
   {
     path: "ui-kits",
     loadChildren: () => import("../../components/ui-kits/ui-kits.module").then((m) => m.UiKitsModule),
   },
-  {
-    path: "base",
-    loadChildren: () => import("../../components/bonus-ui/base/base.module").then((m) => m.BaseModule),
-  },
-  {
-    path: "advance",
-    loadChildren: () => import("../../components/bonus-ui/advance/advance.module").then((m) => m.AdvanceModule),
-  },
+  // {
+  //   path: "base",
+  //   loadChildren: () => import("../../components/bonus-ui/base/base.module").then((m) => m.BaseModule),
+  // },
+  // {
+  //   path: "advance",
+  //   loadChildren: () => import("../../components/bonus-ui/advance/advance.module").then((m) => m.AdvanceModule),
+  // },
   {
     path: "project",
     loadChildren: () => import("../../components/apps/project/project.module").then((m) => m.ProjectModule),
@@ -69,18 +69,18 @@ export const content: Routes = [
     path: "todo",
     loadChildren: () => import("../../components/apps/todo/todo.module").then((m) => m.TodoModule),
   },
-  {
-    path: "buttons",
-    loadChildren: () => import("../../components/buttons/buttons.module").then((m) => m.ButtonsModule),
-  },
-  {
-    path: "editor",
-    loadChildren: () => import("../../components/editors/editor.module").then((m) => m.EditorModule),
-  },
-  {
-    path: "chart",
-    loadChildren: () => import("../../components/charts/charts.module").then((m) => m.ChartModule),
-  },
+  // {
+  //   path: "buttons",
+  //   loadChildren: () => import("../../components/buttons/buttons.module").then((m) => m.ButtonsModule),
+  // },
+  // {
+  //   path: "editor",
+  //   loadChildren: () => import("../../components/editors/editor.module").then((m) => m.EditorModule),
+  // },
+  // {
+  //   path: "chart",
+  //   loadChildren: () => import("../../components/charts/charts.module").then((m) => m.ChartModule),
+  // },
   {
     path: "icons",
     loadChildren: () => import("../../components/icons/icons.module").then((m) => m.IconsModule),
@@ -89,26 +89,26 @@ export const content: Routes = [
     path: "form",
     loadChildren: () => import("../../components/forms/forms.module").then((m) => m.FormModule),
   },
-  {
-    path: "table",
-    loadChildren: () => import("../../components/table/table.module").then((m) => m.TableModule),
-  },
-  {
-    path: "cards",
-    loadChildren: () => import("../../components/cards/cards.module").then((m) => m.CardsModule),
-  },
-  {
-    path: "sample-page",
-    loadChildren: () => import("../../components/others/sample/sample.module").then((m) => m.SampleModule),
-  },
+  // {
+  //   path: "table",
+  //   loadChildren: () => import("../../components/table/table.module").then((m) => m.TableModule),
+  // },
+  // {
+  //   path: "cards",
+  //   loadChildren: () => import("../../components/cards/cards.module").then((m) => m.CardsModule),
+  // },
+  // {
+  //   path: "sample-page",
+  //   loadChildren: () => import("../../components/others/sample/sample.module").then((m) => m.SampleModule),
+  // },
   // {
   //   path: "gallery",
   //   loadChildren: () => import("../../components/apps/gallery/gallery.module").then((m) => m.GalleryDemoModule),
   // },
-  {
-    path: "blog",
-    loadChildren: () => import("../../components/apps/blog/blog.module").then((m) => m.BlogModule),
-  },
+  // {
+  //   path: "blog",
+  //   loadChildren: () => import("../../components/apps/blog/blog.module").then((m) => m.BlogModule),
+  // },
   // {
   //   path: "faq",
   //   loadChildren: () => import("../../components/apps/faq/faq.module").then((m) => m.FaqModule),
@@ -133,8 +133,8 @@ export const content: Routes = [
   //   path: "support-ticket",
   //   loadChildren: () => import("../../components/apps/support-ticket/support-ticket.module").then((m) => m.SupportTicketModule),
   // },
-  {
-    path: "search-pages",
-    loadChildren: () => import("../../components/others/search-result/search-result.module").then((m) => m.SearchResultModule),
-  },
+  // {
+  //   path: "search-pages",
+  //   loadChildren: () => import("../../components/others/search-result/search-result.module").then((m) => m.SearchResultModule),
+  // },
 ];

@@ -3,13 +3,13 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { TypographyComponent } from './typography/typography.component';
 import { AvatarsComponent } from './avatars/avatars.component';
-import { HelperClassesComponent } from './helper-classes/helper-classes.component';
-import { GridComponent } from './grid/grid.component';
+// import { HelperClassesComponent } from './helper-classes/helper-classes.component';
+// import { GridComponent } from './grid/grid.component';
 import { TagNPillsComponent } from './tag-n-pills/tag-n-pills.component';
-import { SpinnersComponent } from './spinners/spinners.component';
-import { ShadowComponent } from './shadow/shadow.component';
-import { ListComponent } from './list/list.component';
-import { RibbionsComponent } from './ribbions/ribbions.component';
+// import { SpinnersComponent } from './spinners/spinners.component';
+// import { ShadowComponent } from './shadow/shadow.component';
+// import { ListComponent } from './list/list.component';
+// import { RibbionsComponent } from './ribbions/ribbions.component';
 import { BreadcrumbComponent } from './breadcrumb/breadcrumb.component';
 
 const routes: Routes = [
@@ -26,11 +26,11 @@ const routes: Routes = [
       },
       {
         path: 'helper-classes',
-        component: HelperClassesComponent
+        // component: HelperClassesComponent
       },
       {
         path: 'grid',
-        component: GridComponent
+        // component: GridComponent
       },
       {
         path: 'tag-n-pills',
@@ -38,19 +38,19 @@ const routes: Routes = [
       },
       {
         path: 'spinner',
-        component: SpinnersComponent
+        // component: SpinnersComponent
       },
       {
         path: 'shadow',
-        component: ShadowComponent
+        // component: ShadowComponent
       },
       {
         path: 'list',
-        component: ListComponent
+        // component: ListComponent
       },
       {
         path: 'ribbons',
-        component: RibbionsComponent
+        // component: RibbionsComponent
       },
       {
         path: 'breadcrumb',
